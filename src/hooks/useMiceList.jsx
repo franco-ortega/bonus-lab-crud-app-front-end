@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getMice } from '../../services/mouseRequest.js';
+import { getMice } from '../services/mouseRequest';
 
 export const useMiceList = () => {
   const [mice, setMice] = useState([]);

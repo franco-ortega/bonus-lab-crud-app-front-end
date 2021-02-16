@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MouseDetails from '../components/mice/MouseDetails';
+import MouseDetails from './MouseDetails';
 
 export default function MiceList({ mice }) {
   console.log(mice);
