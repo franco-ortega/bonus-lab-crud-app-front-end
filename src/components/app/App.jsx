@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { getMice } from '../../services/mouseRequest';
+import React from 'react';
 import MiceList from '../../containers/MiceList';
+import { useMiceList } from '../hooks/useMiceList';
 
 export default function App() {
-  const [mice, setMice] = useState([]);
-
-  useEffect(async() => {
-    return getMice()
-      .then(mice => setMice(mice));
-  }, []);
-  
-  console.log('Mice (GET response):');
-  console.log(mice);
-
+  const { mice } = useMiceList();
 
   return (
     <MiceList mice={mice} />
