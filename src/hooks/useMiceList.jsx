@@ -9,8 +9,8 @@ export const useMiceList = () => {
       .then(mice => setMice(mice));
   }, []);
   
-  console.log('Mice (GET response):');
-  console.log(mice);
+  // console.log('Mice (GET response):');
+  // console.log(mice);
 
   return {
     mice

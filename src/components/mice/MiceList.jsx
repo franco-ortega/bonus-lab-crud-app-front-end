@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MouseDetails from './MouseDetails';
 
 export default function MiceList({ mice }) {
-  console.log(mice);
+  // console.log(mice);
 
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
