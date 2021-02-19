@@ -9,8 +9,8 @@ describe('MouseDetails component', () => {
       <MouseDetails
         id="100"
         name="Lucia"
-        furColor="gray" 
-        tailLength="4" 
+        furColor="gray"
+        tailLength={4}
       />);
     expect(asFragment()).toMatchSnapshot();
   });

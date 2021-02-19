@@ -18,7 +18,9 @@ export default function MouseForm({
   return (
     <div className={styles.MouseForm}>
       Mouse Form
-      <form onSubmit={onFormSubmit}>
+      <form 
+        data-testid="display"
+        onSubmit={onFormSubmit}>
         <p>
           <label htmlFor="post">
           POST <input
