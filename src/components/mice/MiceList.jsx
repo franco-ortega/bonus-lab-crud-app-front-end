@@ -14,7 +14,7 @@ export default function MiceList({ mice, loading }) {
 
   if(loading) return <Loading />;
   return (
-    <ul>
+    <ul data-testid="mice">
       {miceElements}
     </ul>
   );

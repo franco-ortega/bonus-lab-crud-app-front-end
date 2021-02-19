@@ -109,7 +109,9 @@ exports[`App component renders App 1`] = `
         </button>
       </form>
     </div>
-    <ul />
+    <ul
+      data-testid="mice"
+    />
   </div>
 </DocumentFragment>
 `;
