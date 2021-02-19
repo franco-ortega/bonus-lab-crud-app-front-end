@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MouseDetails from './MouseDetails';
+import { useMiceList } from '../../hooks/useMiceList';
+import { useMouseForm } from '../../hooks/useMouseForm';
 
-export default function MiceList({ mice }) {
+export default function MiceList({ mice, response }) {
+  // const { mice } = useMiceList();
+  // const { response } = useMouseForm();
   // console.log(mice);
 
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
       <p>
-        {mouse.name}
-      </p>
-      <p>
-        {mouse.furColor}
-      </p>
-      <p>
-        {mouse.tailLength}
+        {mouse.id} - {mouse.name} - {mouse.furColor} - {mouse.tailLength}
       </p>
     </li>
   ));
@@ -23,6 +21,7 @@ export default function MiceList({ mice }) {
       A list of mice:
       {/* <MouseDetails /> */}
       {miceElements}
+      {<pre>{JSON.stringify(response, null, 2)}</pre>}
     </ul>
   );
 }
@@ -33,5 +32,6 @@ MiceList.propTypes = {
     name: PropTypes.string.isRequired,
     furColor: PropTypes.string.isRequired,
     tailLength: PropTypes.number.isRequired,
-  })).isRequired
+  })).isRequired,
+  response: PropTypes.array
 };
