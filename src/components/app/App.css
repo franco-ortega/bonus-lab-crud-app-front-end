@@ -1,0 +1,9 @@
+.App {
+    background-color: lightsteelblue;
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    background-color: blueviolet;
+}

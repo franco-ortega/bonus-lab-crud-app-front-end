@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MiceList from '../mice/MiceList';
 import MouseForm from '../mice/MouseForm';
 import { useMouseForm } from '../../hooks/useMouseForm';
+import styles from './App.css';
 
 export default function App() {
   const [response, setResponse] = useState([]);
@@ -21,7 +22,7 @@ export default function App() {
   } = useMouseForm();
   
   return (
-    <>
+    <div className={styles.App}>
       <MouseForm
         // name={name}
         // method={method}
@@ -43,6 +44,6 @@ export default function App() {
         response={response}
         setResponse={setResponse}
       />
-    </>
+    </div>
   );
 }
