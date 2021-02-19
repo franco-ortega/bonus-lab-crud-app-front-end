@@ -12,18 +12,16 @@ export default function MouseForm({
   onTailUpdateChange,
   onIdDeleteChange,
   onMethodChange,
-  onFormSubmit,
-  response,
-  setResponse
+  onFormSubmit
 }) {
 
   return (
     <div className={styles.MouseForm}>
-      Mouse Form!
+      Mouse Form
       <form onSubmit={onFormSubmit}>
         <p>
           <label htmlFor="post">
-          Post: <input
+          POST <input
               id="post"
               type="radio"
               name="method"
@@ -50,7 +48,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="get">
-          Get: <input
+          GET <input
               id="get"
               type="radio"
               name="method"
@@ -62,7 +60,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="put">
-          Update: <input
+          PUT <input
               id="put"
               type="radio"
               name="method"
@@ -86,7 +84,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="delete">
-          Delete: <input
+          DELETE <input
               id="delete"
               type="radio"
               name="method"
@@ -105,8 +103,6 @@ export default function MouseForm({
 }
 
 MouseForm.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   method: PropTypes.string.isRequired,
   onNameChange: PropTypes.func.isRequired,
   onFurChange: PropTypes.func.isRequired,
   onTailChange: PropTypes.func.isRequired,
@@ -116,7 +112,5 @@ MouseForm.propTypes = {
   onTailUpdateChange: PropTypes.func.isRequired,
   onIdDeleteChange: PropTypes.func.isRequired,
   onMethodChange: PropTypes.func.isRequired,
-  onFormSubmit: PropTypes.func.isRequired,
-  response: PropTypes.array,
-  setResponse: PropTypes.func.isRequired
+  onFormSubmit: PropTypes.func.isRequired
 };

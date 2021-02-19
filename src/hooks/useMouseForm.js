@@ -13,6 +13,7 @@ export const useMouseForm = () => {
   const [idDelete, setIdDelete] = useState('');
   const [mice, setMice] = useState([]);
   const [response, setResponse] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onNameChange = ({ target }) => {
     setName(target.value);
@@ -52,11 +53,7 @@ export const useMouseForm = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log('METHOD ' + method);
-    // console.log('POST: ' + name, fur, tail);
-    // console.log('PUT: ' + id, nameUpdate, furUpdate, tailUpdate);
-    // console.log('DELETE: ' + idDelete);
-    // console.log(mice);
+    setLoading(true);
 
     const data = { name, furColor: fur, tailLength: tail };
     const dataUpdate = {
@@ -70,12 +67,11 @@ export const useMouseForm = () => {
         setResponse(response);
         getMice()
           .then(mice => setMice(mice));
+        setLoading(false);
       });
   };
 
   return {
-    // name,
-    // method,
     onNameChange,
     onFurChange,
     onTailChange,
@@ -86,6 +82,8 @@ export const useMouseForm = () => {
     onIdDeleteChange,
     onMethodChange,
     onFormSubmit,
-    mice
+    mice,
+    response,
+    loading
   };
 };
