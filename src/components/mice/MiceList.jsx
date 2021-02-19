@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../loading/Loading';
+import MouseDetails from './MouseDetails';
 
 export default function MiceList({ mice, loading }) {
 
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
-      <p>
-        ID: {mouse.id} -
-        - Name: {mouse.name} -
-        - Fur Color: {mouse.furColor} -
-        - Tail Length: {mouse.tailLength} inches
-      </p>
+      <MouseDetails {...mouse} />
     </li>
   ));
 

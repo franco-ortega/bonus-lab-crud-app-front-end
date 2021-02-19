@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MouseDetails component renders MouseDetails 1`] = `
+<DocumentFragment>
+  <div>
+    <p>
+      ID: 100
+      <br />
+      - Name: Lucia
+      <br />
+      - Fur Color: gray
+      <br />
+      - Tail Length: 4 inches
+    </p>
+  </div>
+</DocumentFragment>
+`;
