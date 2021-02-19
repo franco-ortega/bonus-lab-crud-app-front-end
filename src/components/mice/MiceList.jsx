@@ -21,7 +21,7 @@ export default function MiceList({ mice, response }) {
       A list of mice:
       {/* <MouseDetails /> */}
       {miceElements}
-      {<pre>{JSON.stringify(response, null, 2)}</pre>}
+      Response: {response}
     </ul>
   );
 }

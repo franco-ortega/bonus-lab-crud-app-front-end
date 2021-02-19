@@ -1,8 +1,10 @@
 const url = 'https://calm-falls-24000.herokuapp.com/api/v1/mice';
 
-export const mouseRequest = (method, data, id, idDelete) => {
+export const mouseRequest = (method, data, dataUpdate, id, idDelete) => {
   console.log(data);
-  console.log(id);
+  console.log(dataUpdate);
+  console.log('ID: ' + id);
+  console.log('ID delete: ' + idDelete);
 
   if(method === 'GET') {
     return fetch(url, {
@@ -24,7 +26,7 @@ export const mouseRequest = (method, data, id, idDelete) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(dataUpdate)
     })
       .then(res => res.json());
   } else if(method === 'DELETE') {
@@ -33,13 +35,11 @@ export const mouseRequest = (method, data, id, idDelete) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
+      // body: JSON.stringify(data)
     })
       .then(res => res.json());
   }
 };
-
-
 
 
 export const getMice = () => {
@@ -48,8 +48,3 @@ export const getMice = () => {
   })
     .then(res => res.json());
 };
-
-
-
-
-
