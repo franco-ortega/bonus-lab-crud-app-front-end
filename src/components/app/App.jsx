@@ -16,7 +16,8 @@ export default function App() {
     onIdDeleteChange,
     onMethodChange,
     onFormSubmit,
-    mice
+    mice,
+    loading
   } = useMouseForm();
   
   return (
@@ -35,6 +36,7 @@ export default function App() {
       />
       <MiceList
         mice={mice}
+        loading={loading}
       />
     </div>
   );

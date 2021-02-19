@@ -21,7 +21,7 @@ export default function MouseForm({
       <form onSubmit={onFormSubmit}>
         <p>
           <label htmlFor="post">
-          PUT <input
+          POST <input
               id="post"
               type="radio"
               name="method"

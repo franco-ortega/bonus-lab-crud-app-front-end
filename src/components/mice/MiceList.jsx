@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loading from '../loading/Loading';
 
-export default function MiceList({ mice }) {
+export default function MiceList({ mice, loading }) {
 
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
@@ -10,6 +11,8 @@ export default function MiceList({ mice }) {
       </p>
     </li>
   ));
+
+  if(loading) return <Loading />;
   return (
     <ul>
       {miceElements}
@@ -23,5 +26,6 @@ MiceList.propTypes = {
     name: PropTypes.string.isRequired,
     furColor: PropTypes.string.isRequired,
     tailLength: PropTypes.number.isRequired,
-  })).isRequired
+  })).isRequired,
+  loading: PropTypes.bool.isRequired
 };
