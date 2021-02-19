@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function MouseForm({ onNameChange,
+export default function MouseForm({
+  onNameChange,
   onFurChange,
   onTailChange,
   onIdUpdateChange,
@@ -10,13 +11,15 @@ export default function MouseForm({ onNameChange,
   onTailUpdateChange,
   onIdDeleteChange,
   onMethodChange,
-  onMethodSubmit
+  onFormSubmit,
+  response,
+  setResponse
 }) {
 
   return (
     <div>
       Mouse Form!
-      <form onSubmit={onMethodSubmit}>
+      <form onSubmit={onFormSubmit}>
         <p>
           <label htmlFor="post">
           Post: <input
@@ -112,5 +115,7 @@ MouseForm.propTypes = {
   onTailUpdateChange: PropTypes.func.isRequired,
   onIdDeleteChange: PropTypes.func.isRequired,
   onMethodChange: PropTypes.func.isRequired,
-  onMethodSubmit: PropTypes.func.isRequired
+  onFormSubmit: PropTypes.func.isRequired,
+  response: PropTypes.array,
+  setResponse: PropTypes.func.isRequired
 };

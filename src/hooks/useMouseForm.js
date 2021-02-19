@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getMice, mouseRequest } from '../services/mouseRequest';
+// import { useMiceList } from './useMiceList';
 
 export const useMouseForm = () => {
   const [method, setMethod] = useState('');
@@ -10,6 +12,8 @@ export const useMouseForm = () => {
   const [furUpdate, setFurUpdate] = useState('');
   const [tailUpdate, setTailUpdate] = useState('');
   const [idDelete, setIdDelete] = useState('');
+  const [mice, setMice] = useState([]);
+  const [response, setResponse] = useState([]);
 
   const onNameChange = ({ target }) => {
     setName(target.value);
@@ -47,13 +51,38 @@ export const useMouseForm = () => {
     setMethod(target.value);
   };
 
-  const onMethodSubmit = (e) => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
     console.log('METHOD ' + method);
-    console.log('POST: ' + name, fur, tail);
-    console.log('PUT: ' + id, nameUpdate, furUpdate, tailUpdate);
-    console.log('DELETE: ' + idDelete);
+    // console.log('POST: ' + name, fur, tail);
+    // console.log('PUT: ' + id, nameUpdate, furUpdate, tailUpdate);
+    // console.log('DELETE: ' + idDelete);
+    // console.log(mice);
+
+    const data = { id: idDelete, name, furColor: fur, tailLength: tail };
+
+    mouseRequest(method, data, id, idDelete)
+      .then(response => {
+        // console.log(response);
+        setResponse(response);
+        getMice()
+          .then(mice => setMice(mice));
+        // setMice(response);
+        
+      });
   };
+  // console.log('MICE:', mice);
+  
+  // console.log('RESPONSE:');
+  // console.log(response);
+
+  // useEffect(() => {
+  //   return getMice()
+  //     .then(mice => setMice(mice));
+  // }, []);
+  
+  // console.log(mice);
+  
 
   return {
     // name,
@@ -67,6 +96,7 @@ export const useMouseForm = () => {
     onTailUpdateChange,
     onIdDeleteChange,
     onMethodChange,
-    onMethodSubmit
+    onFormSubmit,
+    mice
   };
 };
