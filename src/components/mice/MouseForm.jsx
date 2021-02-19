@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './MouseForm.css';
 
 export default function MouseForm({
   onNameChange,
@@ -17,7 +18,7 @@ export default function MouseForm({
 }) {
 
   return (
-    <div>
+    <div className={styles.MouseForm}>
       Mouse Form!
       <form onSubmit={onFormSubmit}>
         <p>
@@ -28,7 +29,7 @@ export default function MouseForm({
               name="method"
               value="POST"
               onChange={onMethodChange}
-            />
+            /><br />
           Name: <input
               id="post" 
               type="text"
@@ -67,7 +68,7 @@ export default function MouseForm({
               name="method"
               value="PUT"
               onChange={onMethodChange}
-            />
+            /><br />
           ID: <input id="put" type="number"
               onChange={onIdUpdateChange}
             />
