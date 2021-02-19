@@ -7,7 +7,10 @@ export default function MiceList({ mice, loading }) {
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
       <p>
-        {mouse.id} - {mouse.name} - {mouse.furColor} - {mouse.tailLength}
+        ID: {mouse.id} -
+        - Name: {mouse.name} -
+        - Fur Color: {mouse.furColor} -
+        - Tail Length: {mouse.tailLength} inches
       </p>
     </li>
   ));
