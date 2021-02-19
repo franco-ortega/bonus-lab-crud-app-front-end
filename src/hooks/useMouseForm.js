@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getMice, mouseRequest } from '../services/mouseRequest';
-// import { useMiceList } from './useMiceList';
 
 export const useMouseForm = () => {
   const [method, setMethod] = useState('');
@@ -59,30 +58,20 @@ export const useMouseForm = () => {
     // console.log('DELETE: ' + idDelete);
     // console.log(mice);
 
-    const data = { id: idDelete, name, furColor: fur, tailLength: tail };
+    const data = { name, furColor: fur, tailLength: tail };
+    const dataUpdate = {
+      name: nameUpdate,
+      furColor: furUpdate,
+      tailLength: tailUpdate
+    };
 
-    mouseRequest(method, data, id, idDelete)
+    mouseRequest(method, data, dataUpdate, id, idDelete)
       .then(response => {
-        // console.log(response);
         setResponse(response);
         getMice()
           .then(mice => setMice(mice));
-        // setMice(response);
-        
       });
   };
-  // console.log('MICE:', mice);
-  
-  // console.log('RESPONSE:');
-  // console.log(response);
-
-  // useEffect(() => {
-  //   return getMice()
-  //     .then(mice => setMice(mice));
-  // }, []);
-  
-  // console.log(mice);
-  
 
   return {
     // name,

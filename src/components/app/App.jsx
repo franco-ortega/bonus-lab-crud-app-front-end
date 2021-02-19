@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import MiceList from '../mice/MiceList';
-import { useMiceList } from '../../hooks/useMiceList';
 import MouseForm from '../mice/MouseForm';
 import { useMouseForm } from '../../hooks/useMouseForm';
 
 export default function App() {
   const [response, setResponse] = useState([]);
-  // const { mice } = useMiceList();
   
   const {
     onNameChange, 
@@ -21,7 +19,7 @@ export default function App() {
     onFormSubmit,
     mice
   } = useMouseForm();
-  // console.log(mice);
+  
   return (
     <>
       <MouseForm

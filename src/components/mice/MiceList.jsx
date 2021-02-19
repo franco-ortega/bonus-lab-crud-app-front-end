@@ -5,9 +5,6 @@ import { useMiceList } from '../../hooks/useMiceList';
 import { useMouseForm } from '../../hooks/useMouseForm';
 
 export default function MiceList({ mice, response }) {
-  // const { mice } = useMiceList();
-  // const { response } = useMouseForm();
-  // console.log(mice);
 
   const miceElements = mice.map(mouse => (
     <li key={mouse.id}>
@@ -21,7 +18,7 @@ export default function MiceList({ mice, response }) {
       A list of mice:
       {/* <MouseDetails /> */}
       {miceElements}
-      {<pre>{JSON.stringify(response, null, 2)}</pre>}
+      Response: {response}
     </ul>
   );
 }
