@@ -12,9 +12,7 @@ export default function MouseForm({
   onTailUpdateChange,
   onIdDeleteChange,
   onMethodChange,
-  onFormSubmit,
-  response,
-  setResponse
+  onFormSubmit
 }) {
 
   return (
@@ -105,8 +103,6 @@ export default function MouseForm({
 }
 
 MouseForm.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   method: PropTypes.string.isRequired,
   onNameChange: PropTypes.func.isRequired,
   onFurChange: PropTypes.func.isRequired,
   onTailChange: PropTypes.func.isRequired,
@@ -116,7 +112,5 @@ MouseForm.propTypes = {
   onTailUpdateChange: PropTypes.func.isRequired,
   onIdDeleteChange: PropTypes.func.isRequired,
   onMethodChange: PropTypes.func.isRequired,
-  onFormSubmit: PropTypes.func.isRequired,
-  response: PropTypes.array,
-  setResponse: PropTypes.func.isRequired
+  onFormSubmit: PropTypes.func.isRequired
 };

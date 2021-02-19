@@ -52,11 +52,6 @@ export const useMouseForm = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log('METHOD ' + method);
-    // console.log('POST: ' + name, fur, tail);
-    // console.log('PUT: ' + id, nameUpdate, furUpdate, tailUpdate);
-    // console.log('DELETE: ' + idDelete);
-    // console.log(mice);
 
     const data = { name, furColor: fur, tailLength: tail };
     const dataUpdate = {
@@ -74,8 +69,6 @@ export const useMouseForm = () => {
   };
 
   return {
-    // name,
-    // method,
     onNameChange,
     onFurChange,
     onTailChange,
@@ -86,6 +79,7 @@ export const useMouseForm = () => {
     onIdDeleteChange,
     onMethodChange,
     onFormSubmit,
-    mice
+    mice,
+    response
   };
 };

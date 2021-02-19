@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MiceList from '../mice/MiceList';
 import MouseForm from '../mice/MouseForm';
 import { useMouseForm } from '../../hooks/useMouseForm';
 import styles from './App.css';
 
 export default function App() {
-  const [response, setResponse] = useState([]);
-  
   const {
     onNameChange, 
     onFurChange,
@@ -24,8 +22,6 @@ export default function App() {
   return (
     <div className={styles.App}>
       <MouseForm
-        // name={name}
-        // method={method}
         onNameChange={onNameChange}
         onFurChange={onFurChange}
         onTailChange={onTailChange}
@@ -36,13 +32,9 @@ export default function App() {
         onIdDeleteChange={onIdDeleteChange}
         onMethodChange={onMethodChange}
         onFormSubmit={onFormSubmit}
-        response={response}
-        setResponse={setResponse}
       />
       <MiceList
         mice={mice}
-        response={response}
-        setResponse={setResponse}
       />
     </div>
   );
