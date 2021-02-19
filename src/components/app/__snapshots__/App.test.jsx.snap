@@ -9,7 +9,9 @@ exports[`App component renders App 1`] = `
       class="MouseForm"
     >
       Mouse Form
-      <form>
+      <form
+        data-testid="display"
+      >
         <p>
           <label
             for="post"

@@ -6,7 +6,9 @@ exports[`MouseForm component renders MouseForm 1`] = `
     class="MouseForm"
   >
     Mouse Form
-    <form>
+    <form
+      data-testid="display"
+    >
       <p>
         <label
           for="post"
