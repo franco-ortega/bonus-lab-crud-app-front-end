@@ -8,13 +8,13 @@ exports[`App component renders App 1`] = `
     <div
       class="MouseForm"
     >
-      Mouse Form!
+      Mouse Form
       <form>
         <p>
           <label
             for="post"
           >
-            Post: 
+            PUT 
             <input
               id="post"
               name="method"
@@ -43,7 +43,7 @@ exports[`App component renders App 1`] = `
           <label
             for="get"
           >
-            Get: 
+            GET 
             <input
               id="get"
               name="method"
@@ -56,7 +56,7 @@ exports[`App component renders App 1`] = `
           <label
             for="put"
           >
-            Update: 
+            PUT 
             <input
               id="put"
               name="method"
@@ -90,7 +90,7 @@ exports[`App component renders App 1`] = `
           <label
             for="delete"
           >
-            Delete: 
+            DELETE 
             <input
               id="delete"
               name="method"

@@ -17,11 +17,11 @@ export default function MouseForm({
 
   return (
     <div className={styles.MouseForm}>
-      Mouse Form!
+      Mouse Form
       <form onSubmit={onFormSubmit}>
         <p>
           <label htmlFor="post">
-          Post: <input
+          PUT <input
               id="post"
               type="radio"
               name="method"
@@ -48,7 +48,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="get">
-          Get: <input
+          GET <input
               id="get"
               type="radio"
               name="method"
@@ -60,7 +60,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="put">
-          Update: <input
+          PUT <input
               id="put"
               type="radio"
               name="method"
@@ -84,7 +84,7 @@ export default function MouseForm({
 
         <p>
           <label htmlFor="delete">
-          Delete: <input
+          DELETE <input
               id="delete"
               type="radio"
               name="method"
